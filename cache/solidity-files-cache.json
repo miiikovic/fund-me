@@ -900,8 +900,8 @@
       }
     },
     "script/DeployFundMe.s.sol": {
-      "lastModificationDate": 1697465945249,
-      "contentHash": "c9d0efe0a5c9f8e71be88ac05ce6810f",
+      "lastModificationDate": 1697472897967,
+      "contentHash": "98276d1eccce31b2ec12c1646134de03",
       "sourceName": "script/DeployFundMe.s.sol",
       "solcConfig": {
         "settings": {
@@ -948,13 +948,72 @@
         "lib/forge-std/src/console2.sol",
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "lib/forge-std/src/safeconsole.sol",
+        "script/HelperConfig.s.sol",
         "src/FundMe.sol",
-        "src/PriceConverter.sol"
+        "src/PriceConverter.sol",
+        "test/mocks/MockV3Aggregator.sol"
       ],
       "versionRequirement": "^0.8.18",
       "artifacts": {
         "DeployFundMe": {
           "0.8.21+commit.d9974bed.Darwin.appleclang": "DeployFundMe.s.sol/DeployFundMe.json"
+        }
+      }
+    },
+    "script/HelperConfig.s.sol": {
+      "lastModificationDate": 1697474630800,
+      "contentHash": "69d978196f97b2a3356d06d78a20f481",
+      "sourceName": "script/HelperConfig.s.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/forge-std/src/Base.sol",
+        "lib/forge-std/src/Script.sol",
+        "lib/forge-std/src/StdChains.sol",
+        "lib/forge-std/src/StdCheats.sol",
+        "lib/forge-std/src/StdJson.sol",
+        "lib/forge-std/src/StdMath.sol",
+        "lib/forge-std/src/StdStorage.sol",
+        "lib/forge-std/src/StdStyle.sol",
+        "lib/forge-std/src/StdUtils.sol",
+        "lib/forge-std/src/Vm.sol",
+        "lib/forge-std/src/console.sol",
+        "lib/forge-std/src/console2.sol",
+        "lib/forge-std/src/interfaces/IMulticall3.sol",
+        "lib/forge-std/src/safeconsole.sol",
+        "test/mocks/MockV3Aggregator.sol"
+      ],
+      "versionRequirement": "^0.8.18",
+      "artifacts": {
+        "HelperConfig": {
+          "0.8.21+commit.d9974bed.Darwin.appleclang": "HelperConfig.s.sol/HelperConfig.json"
         }
       }
     },
@@ -1100,13 +1159,56 @@
         "lib/forge-std/src/interfaces/IMulticall3.sol",
         "lib/forge-std/src/safeconsole.sol",
         "script/DeployFundMe.s.sol",
+        "script/HelperConfig.s.sol",
         "src/FundMe.sol",
-        "src/PriceConverter.sol"
+        "src/PriceConverter.sol",
+        "test/mocks/MockV3Aggregator.sol"
       ],
       "versionRequirement": "^0.8.18",
       "artifacts": {
         "FundMeTest": {
           "0.8.21+commit.d9974bed.Darwin.appleclang": "FundMeTest.t.sol/FundMeTest.json"
+        }
+      }
+    },
+    "test/mocks/MockV3Aggregator.sol": {
+      "lastModificationDate": 1697474297059,
+      "contentHash": "5226995da70428193f57bd65b75dd5b2",
+      "sourceName": "test/mocks/MockV3Aggregator.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "MockV3Aggregator": {
+          "0.8.21+commit.d9974bed.Darwin.appleclang": "MockV3Aggregator.sol/MockV3Aggregator.json"
         }
       }
     }
