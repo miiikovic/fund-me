@@ -57,7 +57,7 @@ contract FundMeTest is Test {
 
     modifier funded() {
         vm.prank(USER);
-        fundMe.fund{value: SEND_VALUE};
+        fundMe.fund{value: SEND_VALUE}();
         _;
     }
 
@@ -86,19 +86,21 @@ contract FundMeTest is Test {
         );
     }
 
-    function testWithdrawWithMultipleFunders() public funded {
+    function testWithdrawFromMultipleFunders() public funded {
         // Arrange
         uint160 numberOfFunders = 10;
         uint160 startingFunderIndex = 1;
+
         for (uint160 i = startingFunderIndex; i < numberOfFunders; i++) {
-            hoax(address(i), SEND_VALUE); // creates a new addres (vm.prank) and funds it with second argument (vm.deal)
+            // Created a new address (vm.prank) and funds it with some ETH (vm.deal)
+            hoax(address(i), SEND_VALUE);
             fundMe.fund{value: SEND_VALUE}();
         }
 
+        // Act
         uint256 startingOwnerBalance = fundMe.getOwner().balance;
         uint256 startingFundMeBalance = address(fundMe).balance;
 
-        // Act
         vm.startPrank(fundMe.getOwner());
         fundMe.withdraw();
         vm.stopPrank();
